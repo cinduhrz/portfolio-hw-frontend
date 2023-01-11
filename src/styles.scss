@@ -1,27 +1,72 @@
 $maincolor: white;
 $maincolorhover: lightgray;
-$contrastcolor: black;
-$contrastcolor: rgb(88, 88, 88);
+$contrastcolor: rgb(50, 50, 50);
+$contrastcolorhover: rgb(100, 100, 100);
 $accentcolor: rgb(62, 116, 69);
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    padding: 0;
+}
 
 @mixin black-text-white-bg {
     background-color: $maincolor;
     color: $contrastcolor;
-    
-    nav {
-        background-color: $accentcolor;
+}
 
-        a {
-            color: $maincolor;
-            text-decoration: none;
+@mixin white-text-green-bg {
+    background-color: $accentcolor;
+    color: $maincolor;
+}
 
-            &:hover {
-                color: $maincolorhover;
-            }
-        }
+@mixin white-link-gray-hover {
+    color: $maincolor;
+    text-decoration: none;
+
+    &:hover {
+        color: $maincolorhover;
     }
 }
 
 body {
-    @include black-text-white-bg()
+    @include black-text-white-bg();
+    
+    nav {
+        @include white-text-green-bg();
+
+        a {
+            @include white-link-gray-hover();
+            font-size: 1.2rem;
+        }
+    }
+
+    main {
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    margin: 0px;
+}
+
+footer {
+    @include white-text-green-bg();
+    padding: 1px 20px;
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+
+    .footer-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        a {
+            color: $maincolor;
+            @include white-link-gray-hover()
+        }
+
+    }
 }

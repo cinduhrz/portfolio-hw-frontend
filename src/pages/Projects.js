@@ -7,18 +7,20 @@ const Projects = (props) => {
         width: "90%"
     }
 
-    return projects.map((project) => (
-        <div>
-            <h1>{project.name}</h1>
-            <img src={project.image} alt={project.name} style={imageStyling}/>
-            <a href={project.git}>
-                <button>Github</button>
-            </a>
-            <a href={project.live}>
-                <button>Live Site</button>
-            </a>
-        </div>
-        ))
+    return (<><main>
+        {projects.map((project) => (
+            <div>
+                <h1>{project.name}</h1>
+                <img src={project.image} alt={project.name} style={imageStyling}/>
+                <a href={project.git}>
+                    <button>Github</button>
+                </a>
+                <a href={project.live}>
+                    <button>Live Site</button>
+                </a>
+            </div>
+        ))}
+    </main></>)
 }
 
 export default Projects
