@@ -1,5 +1,9 @@
+import { useLoaderData } from 'react-router-dom'
+
 const Projects = (props) => {
-    return <h1>Projects</h1>
+    const projects = useLoaderData()
+
+    return projects.map((element) => element.name)
 }
 
 export default Projects
