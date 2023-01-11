@@ -1,0 +1,27 @@
+$maincolor: white;
+$maincolorhover: lightgray;
+$contrastcolor: black;
+$contrastcolor: rgb(88, 88, 88);
+$accentcolor: rgb(62, 116, 69);
+
+@mixin black-text-white-bg {
+    background-color: $maincolor;
+    color: $contrastcolor;
+    
+    nav {
+        background-color: $accentcolor;
+
+        a {
+            color: $maincolor;
+            text-decoration: none;
+
+            &:hover {
+                color: $maincolorhover;
+            }
+        }
+    }
+}
+
+body {
+    @include black-text-white-bg()
+}
