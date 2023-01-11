@@ -11,6 +11,6 @@ export const projectsLoader = async () => {
 
 export const aboutLoader = async () => {
     const response = await fetch(URL + "/about")
-    const about = await response.json
+    const about = await response.json()
     return about
 }
